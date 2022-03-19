@@ -17,10 +17,10 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
-        @include('partials.header')
+        @include('layouts.partials.header')
 
         <!-- Main Sidebar Container -->
-        @include('partials.sidebar')
+        @include('layouts.partials.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -29,7 +29,7 @@
         <!-- /.content-wrapper -->
 
         <!-- Main Footer -->
-        @include('partials.footer')
+        @include('layouts.partials.footer')
     </div>
 
     <!-- REQUIRED SCRIPTS -->
