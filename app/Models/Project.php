@@ -20,13 +20,15 @@ class Project extends Model
         'client_id'
     ];
 
+    public const STATUS = ['Abierto', 'En Progreso', 'Cancelado', 'Completado'];
+
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class)->withDefault();
     }
 
     public function client()
     {
-        return $this->belongsTo(Client::class);
+        return $this->belongsTo(Client::class)->withDefault();
     }
 }

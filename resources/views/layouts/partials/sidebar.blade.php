@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('admin.projects.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-project-diagram"></i>
                         <p>
                             Proyectos
