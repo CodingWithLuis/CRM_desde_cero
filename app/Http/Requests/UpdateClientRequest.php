@@ -36,17 +36,14 @@ class UpdateClientRequest extends FormRequest
                 'string'
             ],
             'company_name' => [
-                'sometimes',
                 'nullable',
                 'string'
             ],
             'company_address' => [
-                'sometimes',
                 'nullable',
                 'string'
             ],
             'company_phone_number' => [
-                'sometimes',
                 'nullable',
                 'string'
             ]

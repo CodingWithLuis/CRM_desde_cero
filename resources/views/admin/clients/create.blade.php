@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="contact_email" class="required">Email del cliente </label>
-                                <input type="text" name="contact_email" id="contact_email" class="form-control {{$errors->has('contact_email') ? 'is-invalid' : ''}}" placeholder="Ingrese el email del cliente" value="{{old('contact_email', '')}}">
+                                <input type="email" name="contact_email" id="contact_email" class="form-control {{$errors->has('contact_email') ? 'is-invalid' : ''}}" placeholder="Ingrese el email del cliente" value="{{old('contact_email', '')}}">
                                 @if ($errors->has('contact_email'))
                                 <span class="text-danger">
                                     <strong>{{ $errors->first('contact_email') }}</strong>

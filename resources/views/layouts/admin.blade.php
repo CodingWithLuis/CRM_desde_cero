@@ -48,6 +48,11 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.6.0/jq-3.6.0/dt-1.11.5/datatables.min.js"></script>
 
     @yield('scripts')
+
+
+    <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
 </body>
 
 </html>
