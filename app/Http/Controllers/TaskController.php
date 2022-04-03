@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
+use App\Models\Client;
+use App\Models\Project;
 use App\Models\Task;
+use App\Models\User;
 
 class TaskController extends Controller
 {
@@ -15,7 +18,9 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $tasks = Task::all();
+
+        return view('admin.tasks.index', compact('tasks'));
     }
 
     /**
@@ -25,7 +30,13 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all();
+
+        $projects = Project::all();
+
+        $clients = Client::all();
+
+        return view('admin.tasks.create', compact('users', 'projects', 'clients'));
     }
 
     /**
@@ -36,7 +47,9 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
-        //
+        Task::create($request->validated());
+
+        return redirect()->route('admin.tasks.index')->with('success', 'Tarea creada exitosamente');
     }
 
     /**
@@ -58,7 +71,13 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        $users = User::all();
+
+        $projects = Project::all();
+
+        $clients = Client::all();
+
+        return view('admin.tasks.edit', compact('task'));
     }
 
     /**
@@ -70,7 +89,9 @@ class TaskController extends Controller
      */
     public function update(UpdateTaskRequest $request, Task $task)
     {
-        //
+        $task->update($request->validated());
+
+        return redirect()->route('admin.tasks.index')->with('success', 'Tarea editada exitosamente');
     }
 
     /**
@@ -81,6 +102,8 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        $task->delete();
+
+        return back();
     }
 }
