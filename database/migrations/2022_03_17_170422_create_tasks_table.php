@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->date('deadline');
-            $table->string('taks_status')->default('abierto');
+            $table->string('task_status')->default('Abierto');
             $table->foreignId('user_id')->nullable()->constrained();
             $table->foreignId('client_id')->nullable()->constrained();
             $table->foreignId('project_id')->nullable()->constrained();

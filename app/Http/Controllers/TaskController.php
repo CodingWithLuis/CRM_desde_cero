@@ -77,7 +77,7 @@ class TaskController extends Controller
 
         $clients = Client::all();
 
-        return view('admin.tasks.edit', compact('task'));
+        return view('admin.tasks.edit', compact('task', 'users', 'projects', 'clients'));
     }
 
     /**
