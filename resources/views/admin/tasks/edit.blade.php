@@ -120,7 +120,9 @@
 @endsection
 @section('scripts')
 <script>
-    flatpickr(".date", {});
+    flatpickr(".date", {
+        locale: "es"
+    });
 
     $(document).ready(function() {
         $('.select2').select2();
