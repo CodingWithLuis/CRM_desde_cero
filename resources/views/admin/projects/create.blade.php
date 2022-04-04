@@ -104,11 +104,8 @@
 </div>
 @endsection
 @section('scripts')
+<script src="{{ asset('js/datepicker.js') }}"></script>
 <script>
-    flatpickr(".date", {
-        locale: "es"
-    });
-
     $(document).ready(function() {
         $('.select2').select2();
     });

@@ -52,6 +52,21 @@
     <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
+    <script>
+        $(document).ready(function() {
+            $.extend(true, $.fn.dataTable.defaults, {
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json',
+                },
+                columnDefs: [{
+                    orderable: false,
+                    searchable: false,
+                    targets: -1
+                }]
+            })
+        })
+    </script>
+
     @yield('scripts')
 
     <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -59,4 +74,4 @@
     </form>
 </body>
 
-</html>
+</ht
